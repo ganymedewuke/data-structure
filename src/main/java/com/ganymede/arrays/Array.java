@@ -1,11 +1,13 @@
 package com.ganymede.arrays;
 
 /**
- * 创建数组初始化，基本操作
+ * 数基本操作
+ * <p>
+ * 泛型E，可以为任意对象的类型，但不能为8个原生数据类型
  */
-public class Array02 {
+public class Array<E> {
 
-    private int[] data;
+    private E[] data;
     private int size;
 
     /**
@@ -13,15 +15,16 @@ public class Array02 {
      *
      * @param capacity
      */
-    public Array02(int capacity) {
-        data = new int[capacity];
+    public Array(int capacity) {
+        // 初始化数组不能用 new E[n] ,只能用(E[])强转
+        data = (E[]) new Object[capacity];
         size = 0;
     }
 
     /**
      * 无参数的构造函数，默认数组的容量capacity=10
      */
-    public Array02() {
+    public Array() {
         this(10);
     }
 
@@ -57,7 +60,7 @@ public class Array02 {
      *
      * @param e
      */
-    public void addLast(int e) {
+    public void addLast(E e) {
         add(size, e);
     }
 
@@ -66,7 +69,7 @@ public class Array02 {
      *
      * @param e
      */
-    public void addFirst(int e) {
+    public void addFirst(E e) {
         add(0, e);
     }
 
@@ -78,12 +81,13 @@ public class Array02 {
      * @param index
      * @param e
      */
-    public void add(int index, int e) {
-        if (size == data.length)
-            throw new IllegalArgumentException("AddLast failed . Array is full.");
-
+    public void add(int index, E e) {
         if (index < 0 || index > size)
             throw new IllegalArgumentException("AddLast failed . Require index >= 0 and index <= size.");
+
+        //扩容数组
+        if (size == data.length)
+            resize(2 * data.length);
 
         //每个元素向后移一个位置
         for (int i = size - 1; i >= index; i--)
@@ -100,7 +104,7 @@ public class Array02 {
      * @param index
      * @return
      */
-    public int get(int index) {
+    public E get(int index) {
         if (index < 0 || index > size)
             throw new IllegalArgumentException("AddLast failed . Require index >= 0 and index <= size.");
 
@@ -113,7 +117,7 @@ public class Array02 {
      * @param index
      * @return
      */
-    public void set(int index, int e) {
+    public void set(int index, E e) {
         if (index < 0 || index > size)
             throw new IllegalArgumentException("AddLast failed . Require index >= 0 and index <= size.");
 
@@ -126,9 +130,10 @@ public class Array02 {
      * @param e
      * @return
      */
-    public boolean contains(int e) {
+    public boolean contains(E e) {
         for (int i = 0; i < size; i++) {
-            if (data[i] == e)
+            // == 引用比较， equals 值比较
+            if (data[i].equals(e))
                 return true;
         }
         return false;
@@ -140,9 +145,10 @@ public class Array02 {
      * @param e
      * @return
      */
-    public int find(int e) {
+    public int find(E e) {
         for (int i = 0; i < size; i++) {
-            if (data[i] == e)
+            // == 引用比较， equals 值比较
+            if (data[i].equals(e))
                 return i;
         }
         return -1;
@@ -154,14 +160,23 @@ public class Array02 {
      * @param index
      * @return
      */
-    public int remove(int index) {
+    public E remove(int index) {
         if (index < 0 || index > size)
             throw new IllegalArgumentException("AddLast failed . Require index >= 0 and index <= size.");
-        int ret = data[index];
+        E ret = data[index];
         for (int i = index + 1; i < size; i++) {
             data[i - 1] = data[i];
         }
         size--;
+        // 释放data[size]元素，否则gc不可回收
+        // loitering objects  != memory leak
+        data[size] = null;
+
+        //缩容
+        if (size == data.length / 2) {
+            resize(data.length/2);
+        }
+
         return ret;
     }
 
@@ -170,7 +185,7 @@ public class Array02 {
      *
      * @return
      */
-    public int removeFirst() {
+    public E removeFirst() {
         return remove(0);
     }
 
@@ -179,7 +194,7 @@ public class Array02 {
      *
      * @return
      */
-    public int removeLast() {
+    public E removeLast() {
         return remove(size - 1);
     }
 
@@ -188,7 +203,7 @@ public class Array02 {
      *
      * @param e
      */
-    public void removeElement(int e) {
+    public void removeElement(E e) {
         int index = find(e);
         if (index != -1)
             remove(index);
@@ -206,6 +221,19 @@ public class Array02 {
         }
         res.append(']');
         return res.toString();
+    }
+
+
+    /**
+     * 数组扩容函数
+     *
+     * @param newCapacity
+     */
+    private void resize(int newCapacity) {
+        E[] newData = (E[]) new Object[newCapacity];
+        for (int i = 0; i < size; i++)
+            newData[i] = data[i];
+        data = newData;
     }
 
 }

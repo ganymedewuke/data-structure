@@ -3,7 +3,7 @@ package com.ganymede.arrays;
 /**
  * Array Basic
  */
-public class Array01 {
+public class HelloArray {
     public static void main(String[] args) {
         int[] arr = new int[20];
 
