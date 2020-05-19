@@ -116,6 +116,25 @@ public class Array<E> {
     }
 
     /**
+     * 获取数组最后一个元素
+     *
+     * @return
+     */
+    public E getLast() {
+        return get(size - 1);
+    }
+
+    /**
+     * 获取数组第一个元素
+     *
+     * @return
+     */
+    public E getFirst() {
+        return get(0);
+    }
+
+
+    /**
      * 修改index索引位置的元素
      * O(1)
      *
