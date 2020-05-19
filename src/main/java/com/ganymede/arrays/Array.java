@@ -57,6 +57,7 @@ public class Array<E> {
 
     /**
      * 向所有元素后添加一个新元素
+     * O(1)
      *
      * @param e
      */
@@ -66,6 +67,7 @@ public class Array<E> {
 
     /**
      * 向所有元素前添加一个新元素
+     * O(n)
      *
      * @param e
      */
@@ -77,6 +79,7 @@ public class Array<E> {
     /**
      * 在第index个位置插入一个新元素e
      * 原来的数据向后移一位
+     * O(n/2) = O(n)
      *
      * @param index
      * @param e
@@ -100,6 +103,7 @@ public class Array<E> {
 
     /**
      * 获取index索引位置的元素
+     * O(1)
      *
      * @param index
      * @return
@@ -113,6 +117,7 @@ public class Array<E> {
 
     /**
      * 修改index索引位置的元素
+     * O(1)
      *
      * @param index
      * @return
@@ -126,6 +131,7 @@ public class Array<E> {
 
     /**
      * 查找数组中是否有元素e
+     * O(n)
      *
      * @param e
      * @return
@@ -141,6 +147,7 @@ public class Array<E> {
 
     /**
      * 查找数组中元素e所在的索引，如果不存在元素e， 则返回-1
+     * O(n)
      *
      * @param e
      * @return
@@ -156,6 +163,7 @@ public class Array<E> {
 
     /**
      * 从数组中删除index位置的元素，返回删除的元素
+     * O(n/2) = O(n)
      *
      * @param index
      * @return
@@ -173,8 +181,8 @@ public class Array<E> {
         data[size] = null;
 
         //缩容
-        if (size == data.length / 2) {
-            resize(data.length/2);
+        if (size == data.length / 4 && data.length / 2 != 0) { // lazy 缩容
+            resize(data.length / 2);
         }
 
         return ret;
@@ -182,6 +190,7 @@ public class Array<E> {
 
     /**
      * 从数组删除第一个元素，返回删除的元素
+     * O(n)
      *
      * @return
      */
@@ -191,6 +200,7 @@ public class Array<E> {
 
     /**
      * 从数组删除最后一个元素，返回删除的元素
+     * O(1)
      *
      * @return
      */
@@ -226,6 +236,7 @@ public class Array<E> {
 
     /**
      * 数组扩容函数
+     * O(n)
      *
      * @param newCapacity
      */
