@@ -12,6 +12,8 @@
 [Solution.java](src/main/java/com/ganymede/stack/Solution.java)
 
 
+- 队列结构 FIFO 先进先出
+
 ## 链表
 
 
