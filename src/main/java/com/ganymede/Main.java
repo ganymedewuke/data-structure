@@ -3,6 +3,8 @@ package com.ganymede;
 import com.ganymede.arrays.Array;
 import com.ganymede.arrays.Student;
 
+import java.util.Stack;
+
 /**
  * 数据结构与算法
  */
@@ -39,6 +41,7 @@ public class Main {
 
         System.out.println(stuArr);
 
+        Stack stack = new Stack();
 
     }
 }

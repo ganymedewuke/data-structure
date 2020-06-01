@@ -8,7 +8,7 @@ import com.ganymede.arrays.Array;
  *
  * @param <E>
  */
-public class ArrayStack<E> implements Stack<E> {
+public class ArrayStack<E> implements IStack<E> {
 
     Array<E> array;
 
