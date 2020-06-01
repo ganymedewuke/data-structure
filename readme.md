@@ -5,7 +5,7 @@
 - 时间复杂度分析
 
 ## 栈和队列
-- 栈数据结构 先进后出
+- 栈数据结构 Stack FILO先进后出
 [ArrayStack.java](src/main/java/com/ganymede/stack/ArrayStack.java)
 
 - leetcode题目 ： 有效的括号 
