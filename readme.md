@@ -15,6 +15,9 @@
 - 队列结构 FIFO 先进先出
 [MyArrayQueue.java](src/main/java/com/ganymede/queue/MyArrayQueue.java)
 
+- 循环队列，优化出队的效率
+[LoopQueue.java](src/main/java/com/ganymede/queue/LoopQueue.java)
+
 ## 链表
 
 
