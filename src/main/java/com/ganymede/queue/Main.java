@@ -28,6 +28,13 @@ public class Main {
         return (endTime - startTime) / 1000_000_000.0;
     }
 
+    /**
+     * 100万的测试对比
+     * ArrayQueue,time: 417.890205362 s
+     * LoopQueue,time: 0.072618518 s
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         int opCount = 100_0000;
 
