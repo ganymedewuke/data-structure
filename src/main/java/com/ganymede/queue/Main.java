@@ -1,5 +1,7 @@
 package com.ganymede.queue;
 
+import com.ganymede.link.LinkedListQueue;
+
 import java.util.Random;
 
 public class Main {
@@ -36,16 +38,23 @@ public class Main {
      * @param args
      */
     public static void main(String[] args) {
-        int opCount = 100_0000;
+        int opCount = 10_0000;
 
         MyArrayQueue arrayQueue = new MyArrayQueue();
 
+
+        //数组队列，由于需要不断地移动，是 O(n)
         double time1 = testQueue(arrayQueue, opCount);
         System.out.println("ArrayQueue,time: " + time1 + " s");
 
+        //循环队列用与链表都是O(1)的复杂度
         LoopQueue loopQueue = new LoopQueue();
         double time2 = testQueue(loopQueue, opCount);
         System.out.println("LoopQueue,time: " + time2 + " s");
+
+        LinkedListQueue linkedListQueue = new LinkedListQueue();
+        double time3 = testQueue(linkedListQueue, opCount);
+        System.out.println("linkedListQueue,time: " + time3 + " s");
 
 
     }
