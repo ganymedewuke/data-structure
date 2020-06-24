@@ -14,6 +14,11 @@ public interface IStack<E> {
 
     E pop();
 
+    /**
+     * 查看栈顶的元素
+     *
+     * @return
+     */
     E peek();
 
 }
