@@ -3,6 +3,7 @@ package com.ganymede.stack;
 import java.util.Stack;
 
 /**
+ * 栈的基本使用
  * 给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串，判断字符串是否有效。
  * <p>
  * 有效字符串需满足：
