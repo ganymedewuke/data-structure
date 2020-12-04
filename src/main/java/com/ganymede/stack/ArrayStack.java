@@ -5,7 +5,6 @@ import com.ganymede.arrays.Array;
 /**
  * 栈的基本操作
  * 时间复杂度都为 O(1)
- *
  * @param <E>
  */
 public class ArrayStack<E> implements IStack<E> {
