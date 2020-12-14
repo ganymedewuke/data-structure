@@ -38,14 +38,10 @@ public class 移除链表元素虚拟头节点 {
 
     public static void main(String[] args) {
         // 1->2->6->3->4->5->6
-        ListNode listNode = new ListNode(1);
-        listNode.next = new ListNode(2);
-        listNode.next.next = new ListNode(6);
-        listNode.next.next.next = new ListNode(3);
-        listNode.next.next.next.next = new ListNode(4);
-        listNode.next.next.next.next.next = new ListNode(5);
-        listNode.next.next.next.next.next.next = new ListNode(6);
 
+        int[] nums = {1, 2, 6, 3, 4, 5, 6};
+
+        ListNode listNode = new ListNode(nums);
 
         System.out.println(listNode);
 
