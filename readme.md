@@ -19,6 +19,8 @@
 [LoopQueue.java](src/main/java/com/ganymede/queue/LoopQueue.java)
 
 ## 链表
+- 递归求和
+[Sum.java](src/main/java/com/ganymede/recursion/Sum.java)
 
 
 ## 链表与递归
