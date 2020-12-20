@@ -2,6 +2,9 @@ package com.ganymede.link;
 
 import lombok.ToString;
 
+/**
+ * 链表天然的递归性
+ */
 @ToString
 public class ListNode {
     int val;

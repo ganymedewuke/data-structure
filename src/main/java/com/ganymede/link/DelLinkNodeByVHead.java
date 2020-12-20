@@ -8,7 +8,7 @@ package com.ganymede.link;
  * 输入: 1->2->6->3->4->5->6, val = 6
  * 输出: 1->2->3->4->5
  */
-public class 移除链表元素 {
+public class DelLinkNodeByVHead {
     /**
      * Definition for singly-linked list.
      * public class ListNode {
@@ -19,40 +19,29 @@ public class 移除链表元素 {
      */
     public static ListNode removeElements(ListNode head, int val) {
 
-        while (head != null && head.val == val) {
-            ListNode delNode = head;
-            head = head.next;
-            delNode.next = null;
-        }
+        ListNode dummyHead = new ListNode(-1);
+        dummyHead.next = head;
 
-        if (head == null)
-            return null;
+        ListNode prev = dummyHead;
 
-        ListNode prev = head;
         while (prev.next != null) {
             if (prev.next.val == val) {
-                ListNode delNode = prev.next;
-                prev.next = delNode.next;
-                delNode.next = null;
+                prev.next = prev.next.next;
             } else {
                 prev = prev.next;
             }
         }
 
-        return head;
+        return dummyHead.next;
     }
 
 
     public static void main(String[] args) {
         // 1->2->6->3->4->5->6
-        ListNode listNode = new ListNode(1);
-        listNode.next = new ListNode(2);
-        listNode.next.next = new ListNode(6);
-        listNode.next.next.next = new ListNode(3);
-        listNode.next.next.next.next = new ListNode(4);
-        listNode.next.next.next.next.next = new ListNode(5);
-        listNode.next.next.next.next.next.next = new ListNode(6);
 
+        int[] nums = {1, 2, 6, 3, 4, 5, 6};
+
+        ListNode listNode = new ListNode(nums);
 
         System.out.println(listNode);
 

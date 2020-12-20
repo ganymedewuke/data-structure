@@ -19,6 +19,12 @@
 [LoopQueue.java](src/main/java/com/ganymede/queue/LoopQueue.java)
 
 ## 链表
+- 删除节点
+[DelLinkNode.java](src/main/java/com/ganymede/link/DelLinkNode.java)
+
+- 删除节点(虚似头节点)
+[DelLinkNodeByVHead.java](src/main/java/com/ganymede/link/DelLinkNodeByVHead.java)
+
 - 递归求和
 [Sum.java](src/main/java/com/ganymede/recursion/Sum.java)
 
