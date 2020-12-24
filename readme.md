@@ -29,6 +29,7 @@
 ## 链表与递归
 - 递归求和
 [Sum.java](src/main/java/com/ganymede/recursion/Sum.java)
+- 删除节点，递归实现
 [DelLinkNodeByRec.java](src/main/java/com/ganymede/recursion/DelLinkNodeByRec.java)
 
 ## 树
