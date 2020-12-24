@@ -25,12 +25,11 @@
 - 删除节点(虚似头节点)
 [DelLinkNodeByVHead.java](src/main/java/com/ganymede/link/DelLinkNodeByVHead.java)
 
-- 递归求和
-[Sum.java](src/main/java/com/ganymede/recursion/Sum.java)
-
 
 ## 链表与递归
-
+- 递归求和
+[Sum.java](src/main/java/com/ganymede/recursion/Sum.java)
+[DelLinkNodeByRec.java](src/main/java/com/ganymede/recursion/DelLinkNodeByRec.java)
 
 ## 树
 

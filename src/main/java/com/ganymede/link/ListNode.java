@@ -5,12 +5,11 @@ import lombok.ToString;
 /**
  * 链表天然的递归性
  */
-@ToString
 public class ListNode {
-    int val;
-    ListNode next;
+    public int val;
+    public ListNode next;
 
-    ListNode(int x) {
+    public ListNode(int x) {
         val = x;
     }
 
@@ -32,5 +31,17 @@ public class ListNode {
             cur.next = new ListNode(arr[i]);
             cur = cur.next;
         }
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder s = new StringBuilder();
+        ListNode cur = this;
+        while (cur != null) {
+            s.append(cur.val + "->");
+            cur = cur.next;
+        }
+        s.append("NULL");
+        return s.toString();
     }
 }
