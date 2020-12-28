@@ -15,6 +15,11 @@ import java.util.Map;
  * <p>
  */
 public class FibonacciSequence {
+    /**
+     * 循环实现代码简单，且不会栈溢出
+     * @param n
+     * @return
+     */
     public int fib(int n) {
         int a = 0, b = 1, sum;
         for (int i = 0; i < n; i++) {
