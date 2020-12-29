@@ -2,7 +2,8 @@
 ## 数组
 - 动态数组基本操作、泛型支持、动态扩缩容。
 [Array.java](src/main/java/com/ganymede/arrays/Array.java)
-- 时间复杂度分析
+- 转置矩阵
+[TransposeMatrix.java](src/main/java/com/ganymede/arrays/TransposeMatrix.java)
 
 ## 栈和队列
 - 栈数据结构 Stack FILO先进后出
