@@ -4,6 +4,8 @@
 [Array.java](src/main/java/com/ganymede/arrays/Array.java)
 - 转置矩阵
 [TransposeMatrix.java](src/main/java/com/ganymede/arrays/TransposeMatrix.java)
+- 主要元素
+[MajorityElementCalc.java](src/main/java/com/ganymede/arrays/MajorityElementCalc.java)
 
 ## 栈和队列
 - 栈数据结构 Stack FILO先进后出
