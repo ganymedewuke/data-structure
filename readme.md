@@ -38,7 +38,8 @@
 [FibonacciSequence.java](src/main/java/com/ganymede/recursion/FibonacciSequence.java)
 
 ## 树
-
+- 二分搜索树
+[BinarySearchTree.java](src/main/java/com/ganymede/tree/BinarySearchTree.java)
 
 ## 集合
 

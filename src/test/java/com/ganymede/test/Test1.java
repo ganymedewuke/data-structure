@@ -10,5 +10,12 @@ public class Test1 {
 
         LinkedList linkedList = new LinkedList();
 
+
+
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
     }
 }
