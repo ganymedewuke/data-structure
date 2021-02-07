@@ -85,16 +85,23 @@ public class Array<E> {
      * @param e
      */
     public void add(int index, E e) {
-        if (index < 0 || index > size)
+        if (index < 0 || index > size) {
             throw new IllegalArgumentException("AddLast failed . Require index >= 0 and index <= size.");
+        }
 
-        //扩容数组
-        if (size == data.length)
+        /**
+         * 扩容数组
+         */
+        if (size == data.length) {
             resize(2 * data.length);
+        }
 
-        //每个元素向后移一个位置
-        for (int i = size - 1; i >= index; i--)
+        /**
+         * 每个元素向后移一个位置
+         */
+        for (int i = size - 1; i >= index; i--) {
             data[i + 1] = data[i];
+        }
 
         data[index] = e;
         size++;

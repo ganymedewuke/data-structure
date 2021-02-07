@@ -72,7 +72,7 @@ public class BinarySearchTree<E extends Comparable<E>> {
 
         if (e.compareTo(node.e) < 0) {
             node.left = add(node.left, e);
-        } else if (e.compareTo(node.e) > 0) { // e.compareTo(node.e) > 0
+        } else if (e.compareTo(node.e) > 0) {
             node.right = add(node.right, e);
         }
 
@@ -179,7 +179,7 @@ public class BinarySearchTree<E extends Comparable<E>> {
     @Override
     public String toString() {
         StringBuilder res = new StringBuilder();
-        generateBSTString(root, 0, res);
+        generateBstString(root, 0, res);
 
         return res.toString();
     }
@@ -191,15 +191,15 @@ public class BinarySearchTree<E extends Comparable<E>> {
      * @param depth
      * @param res
      */
-    private void generateBSTString(Node node, int depth, StringBuilder res) {
+    private void generateBstString(Node node, int depth, StringBuilder res) {
         if (node == null) {
             res.append(generateDepthString(depth) + "null\n");
             return;
         }
 
         res.append(generateDepthString(depth) + node.e + "\n");
-        generateBSTString(node.left, depth + 1, res);
-        generateBSTString(node.right, depth + 1, res);
+        generateBstString(node.left, depth + 1, res);
+        generateBstString(node.right, depth + 1, res);
     }
 
     private String generateDepthString(int depth) {
