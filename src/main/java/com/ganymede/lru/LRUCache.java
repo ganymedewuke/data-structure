@@ -8,6 +8,13 @@ import java.util.HashMap;
  * <p>
  * 先进先出策略 FIFO（First In，First Out）
  * 最少使用策略 LFU（Least Frequently Used）
+ * <p>
+ * 为LRU（最近最少使用）缓存策略设计一个数据结构，支持以下操作：
+ * <p>
+ * LRUCache(int capacity) : 初始化
+ * int get(int key) 获取数据: 如果缓存中存在key，则获取其数据值，否则返回-1。
+ * void put(int key, value) 写入数据: 如果key还没有在缓存中，则写入其数据值。当缓存达到上限，它应该在写入新数据之前删除最近最少使用的数据用来腾出空闲位置。
+ * 所有操作在O(1)时间内完成
  */
 public class LRUCache {
     int capacity;
